@@ -1,0 +1,55 @@
+{
+  "schema": "2.0",
+  "config": {
+    "update_multi": true,
+    "width_mode": "default",
+    "style": {
+      "text_size": {
+        "title": { "default": "heading-2", "pc": "heading-2", "mobile": "heading-3" },
+        "body": { "default": "normal", "pc": "normal", "mobile": "normal" },
+        "caption": { "default": "notation", "pc": "notation", "mobile": "notation" }
+      },
+      "color": {
+        "cus-primary":    { "light_mode": "rgba(30,120,255,1)",    "dark_mode": "rgba(80,150,255,1)"   },
+        "cus-primary-bg": { "light_mode": "rgba(30,120,255,0.08)", "dark_mode": "rgba(80,150,255,0.12)" },
+        "cus-muted":      { "light_mode": "rgba(100,106,115,1)",   "dark_mode": "rgba(150,155,163,1)"  }
+      }
+    }
+  },
+  "header": {
+    "title":    { "tag": "plain_text", "content": "证件照助手" },
+    "subtitle": { "tag": "plain_text", "content": "选择你的需求，确认后我引导你完成证件照" },
+    "template": "blue",
+    "icon": { "tag": "standard_icon", "token": "lark-logo_colorful" }
+  },
+  "body": {
+    "direction": "vertical",
+    "padding": "12px 12px 20px 12px",
+    "elements": [
+      {
+        "tag": "form",
+        "name": "id_photo_form",
+        "elements": [
+          { "tag": "markdown", "content": "**一键换底（单选）**" },
+          {
+            "tag": "select_static",
+            "name": "bg",
+            "placeholder": { "tag": "plain_text", "content": "请选择底色" },
+            "initial_option": "blue",
+            "required": true,
+            "options": [
+              { "text": { "tag": "plain_text", "content": "🟦 蓝色（求职 / 默认）" }, "value": "blue" },
+              { "text": { "tag": "plain_text", "content": "🟥 红色（考试报名 / 证书）" }, "value": "red" },
+              { "text": { "tag": "plain_text", "content": "⬜ 白色（签证 / 护照）" }, "value": "white" }
+            ]
+          },
+          { "tag": "hr" },
+          { "tag": "markdown", "content": "**是否换正装**" },
+          { "tag": "checker", "name": "suit", "checked": true, "text": { "tag": "plain_text", "content": "换正装（深色西装 + 白衬衫）" } },
+          { "tag": "button", "text": { "tag": "plain_text", "content": "确认，下一步" }, "type": "primary", "form_action_type": "submit", "name": "confirm" }
+        ]
+      },
+      { "tag": "markdown", "content": "选择后点「确认」；也可以直接把选择或照片发给我。" }
+    ]
+  }
+}
